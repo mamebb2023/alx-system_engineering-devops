@@ -1,2 +1,2 @@
 #!/bin/bash
-greb "^[a-z]" /etc/ssh/sshd_config
+egreb "^[a-z]" /etc/ssh/sshd_config
