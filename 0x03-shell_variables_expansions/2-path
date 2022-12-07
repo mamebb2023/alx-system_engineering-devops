@@ -1,2 +1,2 @@
 #!/bin/bash
-mv /action $PATH
+mkdir /action $PATH
