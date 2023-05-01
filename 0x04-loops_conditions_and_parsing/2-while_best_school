@@ -1,10 +1,10 @@
-#!/bin/env bash
-# Prints A string 10 times
+#!/usr/bin/env bash
+# Displays "Holberton School" 10 times using a while loop.
 
-i=0
+count=0
 
-while [ $i -lt 10 ]
+while [ $count -lt 10 ]
 do
-	echo "Best School"
-	((i += 1))
+  echo "Best School"
+  (( count++ ))
 done
