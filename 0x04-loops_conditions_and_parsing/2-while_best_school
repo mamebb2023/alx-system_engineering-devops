@@ -1,4 +1,9 @@
 #!/bin/env bash
 
 i=0
-while [ $i -lt 10 ]; do echo "Best School"; i=$((i + 1)); done
+
+while [ $i -lt 10 ]
+do
+	echo "Best School"
+	((i += 1))
+done
