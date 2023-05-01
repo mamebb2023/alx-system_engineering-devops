@@ -1,5 +1,5 @@
 #!/bin/env bash
-
+# Prints A string 10 times
 i=0
 
 while [ $i -lt 10 ]
