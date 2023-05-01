@@ -1,5 +1,5 @@
 #!/bin/env bash
-# Prints a strnig 10 times
+# Prints the strnig ten times using until
 
 cnt=0
 
