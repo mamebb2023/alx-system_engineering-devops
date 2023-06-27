@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Write a Bash script that configures a new Ubuntu machine nginx
+
+apt-get -y update
+apt-get -y install nginx
+ufw allow  'Nginx HTTP' #nginx should be listed on port 80
+echo 'Holberton School' > /var/www/html/index.nginx-debian.html
+service nginx restart
