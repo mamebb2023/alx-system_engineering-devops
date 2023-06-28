@@ -11,6 +11,6 @@ file_line {'PasswordAuthentication':
 file_line {'IdentityFile':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
-  line   => 'IdentityFile ~/.ssh/holberton',
+  line   => 'IdentityFile ~/.ssh/school',
   match  => '^IdentityFile',
 }
