@@ -1,3 +1,6 @@
+apt update
+apt install haproxy
+
 echo "ENABLED=1" >> /etc/default/haproxy
 mv /etc/haproxy/haproxy.cfg{,.original}
 touch /etc/haproxy/haproxy.cfg
@@ -27,8 +30,8 @@ listen hbnb
     balance roundrobin
     option httpclose
     option forwardfor
-    server 375-web-01 104.196.168.90:80 check
-    server 375-web-02 35.196.46.172:80 check
+    server 205804-web-01 52.3.243.103:80 check
+    server 205804-web-02 100.26.157.206:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 service haproxy start
