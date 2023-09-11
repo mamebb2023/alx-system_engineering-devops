@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # haproxy config for new ubuntu server
 
 apt update
