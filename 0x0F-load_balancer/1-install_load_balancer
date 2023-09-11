@@ -1,3 +1,6 @@
+#!/bin/bash
+# haproxy config for new ubuntu server
+
 apt update
 apt install haproxy
 
