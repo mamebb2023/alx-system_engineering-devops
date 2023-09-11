@@ -1,22 +1,34 @@
-#!/usr/bin/env bash
-#configures a new Ubuntu machine nginx
+echo "ENABLED=1" >> /etc/default/haproxy
+mv /etc/haproxy/haproxy.cfg{,.original}
+touch /etc/haproxy/haproxy.cfg
 
-apt update
-apt install -y software-properties-common
-apt install haproxy
+printf %s "global
+    log 127.0.0.1 local0 notice
+    maxconn 2000
+    user haproxy
+    group haproxy
 
-printf %s "frontend web-front
-        bind *:80
-        default_backend web-backend
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    retries 3
+    option redispatch
+    timeout connect  5000
+    timeout client  10000
+    timeout server  10000
 
-backend web-backend
-	bind 0.0.0.0:80
-    	mode http
-    	stats enable
-    	stats uri /haproxy?stats
-        balance roundrobin
-        server 205804-web-01 52.3.243.103:80 check
-        server 205804-web-02 100.26.157.206:80 check
-" >>  /etc/haproxy/haproxy.cfg
+listen hbnb
+    bind 0.0.0.0:80
+    mode http
+    stats enable
+    stats uri /haproxy?stats
+    balance roundrobin
+    option httpclose
+    option forwardfor
+    server 375-web-01 104.196.168.90:80 check
+    server 375-web-02 35.196.46.172:80 check
+" >> /etc/haproxy/haproxy.cfg
 
 service haproxy start
