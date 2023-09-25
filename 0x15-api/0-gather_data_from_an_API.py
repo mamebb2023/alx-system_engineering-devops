@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ Return information about an employee's TODO list progress """
 import requests
 import sys
