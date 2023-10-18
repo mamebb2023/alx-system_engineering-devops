@@ -36,11 +36,11 @@ defaults
 frontend http_front
         bind *:80
         bind *:443 ssl crt /etc/haproxy/certs/blackbronze.tech.pem
-        redirect scheme https code 301 if !{ssl_fc}
         mode http
         default_backend http_back
+        redirect scheme https code 301 if !{ ssl_fc }
 
 backend http_back
         balance roundrobin
-        server 205804-web-01 52.3.243.103:80 check
-        server 205804-web-02 100.26.157.206:80 check
+        server 205804-web-01 3.85.136.63:80 check
+        server 205804-web-02 54.90.31.43:80 check
